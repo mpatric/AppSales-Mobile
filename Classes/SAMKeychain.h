@@ -1,5 +1,5 @@
 //
-//  SSKeychain.h
+//  SAMKeychain.h
 //  SSToolkit
 //
 //  Created by Sam Soffes on 5/19/10.
@@ -9,21 +9,21 @@
 #import <Security/Security.h>
 
 typedef enum {
-	SSKeychainErrorBadArguments = -1001,
-	SSKeychainErrorNoPassword = -1002,
-	SSKeychainErrorInvalidParameter = errSecParam,
-	SSKeychainErrorFailedToAllocated = errSecAllocate,
-	SSKeychainErrorNotAvailable = errSecNotAvailable,
-	SSKeychainErrorAuthorizationFailed = errSecAuthFailed,
-	SSKeychainErrorDuplicatedItem = errSecDuplicateItem,
-	SSKeychainErrorNotFound = errSecItemNotFound,
-	SSKeychainErrorInteractionNotAllowed = errSecInteractionNotAllowed,
-	SSKeychainErrorFailedToDecode = errSecDecode
-} SSKeychainErrorCode;
+	SAMKeychainErrorBadArguments = -1001,
+	SAMKeychainErrorNoPassword = -1002,
+	SAMKeychainErrorInvalidParameter = errSecParam,
+	SAMKeychainErrorFailedToAllocated = errSecAllocate,
+	SAMKeychainErrorNotAvailable = errSecNotAvailable,
+	SAMKeychainErrorAuthorizationFailed = errSecAuthFailed,
+	SAMKeychainErrorDuplicatedItem = errSecDuplicateItem,
+	SAMKeychainErrorNotFound = errSecItemNotFound,
+	SAMKeychainErrorInteractionNotAllowed = errSecInteractionNotAllowed,
+	SAMKeychainErrorFailedToDecode = errSecDecode
+} SAMKeychainErrorCode;
 
-extern NSString *SSKeychainErrorDomain;
+extern NSString *SAMKeychainErrorDomain;
 
-@interface SSKeychain : NSObject {
+@interface SAMKeychain : NSObject {
 	
 }
 

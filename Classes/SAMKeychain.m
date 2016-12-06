@@ -1,20 +1,20 @@
 //
-//  SSKeychain.m
+//  SAMKeychain.m
 //  SSToolkit
 //
 //  Created by Sam Soffes on 5/19/10.
 //  Copyright 2009-2010 Sam Soffes. All rights reserved.
 //
 
-#import "SSKeychain.h"
+#import "SAMKeychain.h"
 
-NSString *SSKeychainErrorDomain = @"com.samsoffes.sskeychain";
+NSString *SAMKeychainErrorDomain = @"com.samsoffes.samkeychain";
 
-@interface SSKeychain (PrivateMethods)
+@interface SAMKeychain (PrivateMethods)
 + (NSMutableDictionary *)_keychainQueryForService:(NSString *)service account:(NSString *)account;
 @end
 
-@implementation SSKeychain
+@implementation SAMKeychain
 
 #pragma mark Class Methods
 
@@ -32,7 +32,7 @@ NSString *SSKeychainErrorDomain = @"com.samsoffes.sskeychain";
 
 
 + (NSString *)passwordForService:(NSString *)service account:(NSString *)account error:(NSError **)error {
-	OSStatus status = SSKeychainErrorBadArguments;
+	OSStatus status = SAMKeychainErrorBadArguments;
 	NSString *result = nil;
 	
 	if (0 < [service length] && 0 < [account length]) {
@@ -54,7 +54,7 @@ NSString *SSKeychainErrorDomain = @"com.samsoffes.sskeychain";
 	}
 	
 	if (status != noErr && error != NULL) {
-		*error = [NSError errorWithDomain:SSKeychainErrorDomain code:status userInfo:nil];
+		*error = [NSError errorWithDomain:SAMKeychainErrorDomain code:status userInfo:nil];
 	}
 	
 	return result;
@@ -67,14 +67,14 @@ NSString *SSKeychainErrorDomain = @"com.samsoffes.sskeychain";
 
 
 + (BOOL)deletePasswordForService:(NSString *)service account:(NSString *)account error:(NSError **)error {
-	OSStatus status = SSKeychainErrorBadArguments;
+	OSStatus status = SAMKeychainErrorBadArguments;
 	if (0 < [service length] && 0 < [account length]) {
 		NSMutableDictionary *keychainQuery = [self _keychainQueryForService:service account:account];
 		status = SecItemDelete((CFDictionaryRef)keychainQuery);
 	}
 	
 	if (status != noErr && error != NULL) {
-		*error = [NSError errorWithDomain:SSKeychainErrorDomain code:status userInfo:nil];
+		*error = [NSError errorWithDomain:SAMKeychainErrorDomain code:status userInfo:nil];
 	}
 	
 	return status == noErr;
@@ -87,7 +87,7 @@ NSString *SSKeychainErrorDomain = @"com.samsoffes.sskeychain";
 
 
 + (BOOL)setPassword:(NSString *)password forService:(NSString *)service account:(NSString *)account error:(NSError **)error {
-	OSStatus status = SSKeychainErrorBadArguments;
+	OSStatus status = SAMKeychainErrorBadArguments;
 	if (0 < [service length] && 0 < [account length]) {
 		[self deletePasswordForService:service account:account];
 		if (0 < [password length]) {
@@ -99,7 +99,7 @@ NSString *SSKeychainErrorDomain = @"com.samsoffes.sskeychain";
 	}
 	
 	if (status != noErr && error != NULL) {
-		*error = [NSError errorWithDomain:SSKeychainErrorDomain code:status userInfo:nil];
+		*error = [NSError errorWithDomain:SAMKeychainErrorDomain code:status userInfo:nil];
 	}
 	
 	return status == noErr;

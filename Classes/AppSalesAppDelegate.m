@@ -11,7 +11,7 @@
 #import "CurrencyManager.h"
 #import "ReportDownloadOperation.h"
 #import "ReportDownloadCoordinator.h"
-#import "SSKeychain.h"
+#import "SAMKeychain.h"
 #import "ASAccount.h"
 #import "SalesViewController.h"
 
@@ -167,7 +167,7 @@
 	NSString *oldUsername = [[NSUserDefaults standardUserDefaults] stringForKey:@"iTunesConnectUsername"];
 	NSString *oldPassword = nil;
 	if (oldUsername) {
-		oldPassword = [SSKeychain passwordForService:@"omz:software AppSales Mobile Service" account:oldUsername];
+		oldPassword = [SAMKeychain passwordForService:@"omz:software AppSales Mobile Service" account:oldUsername];
 	}
 	ASAccount *account = nil;
 	if (oldUsername) {

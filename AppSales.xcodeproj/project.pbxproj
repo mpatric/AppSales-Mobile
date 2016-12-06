@@ -61,7 +61,7 @@
 		7F709D4113BC98860008DBAD /* AppSales.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7F709D3F13BC98860008DBAD /* AppSales.xcdatamodeld */; };
 		7F709D4713BC98860008DBAD /* AccountsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F709D4613BC98860008DBAD /* AccountsViewController.m */; };
 		7F709D6713BCB6500008DBAD /* FieldEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F709D6213BCB64F0008DBAD /* FieldEditorViewController.m */; };
-		7F709D6C13BCC3C80008DBAD /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F709D6B13BCC3C80008DBAD /* SSKeychain.m */; };
+		7F709D6C13BCC3C80008DBAD /* SAMKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F709D6B13BCC3C80008DBAD /* SAMKeychain.m */; };
 		7F709D6E13BCC4270008DBAD /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F709D6D13BCC4270008DBAD /* Security.framework */; };
 		7F709D8C13BD03D40008DBAD /* SalesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F709D8B13BD03D30008DBAD /* SalesViewController.m */; };
 		7F709D8F13BD064E0008DBAD /* ASAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F709D8E13BD064D0008DBAD /* ASAccount.m */; };
@@ -625,6 +625,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4CD1CF791DF6E44B0018262B /* AppSalesMobile.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AppSalesMobile.entitlements; sourceTree = "<group>"; };
 		6D81574814CB3C2B005E8F3F /* KKKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKKeychain.h; sourceTree = "<group>"; };
 		6D81574914CB3C2B005E8F3F /* KKKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKKeychain.m; sourceTree = "<group>"; };
 		6D81574A14CB3C2B005E8F3F /* KKPasscodeLock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKPasscodeLock.h; sourceTree = "<group>"; };
@@ -713,8 +714,8 @@
 		7F709D4613BC98860008DBAD /* AccountsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AccountsViewController.m; sourceTree = "<group>"; };
 		7F709D6113BCB64E0008DBAD /* FieldEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldEditorViewController.h; sourceTree = "<group>"; };
 		7F709D6213BCB64F0008DBAD /* FieldEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FieldEditorViewController.m; sourceTree = "<group>"; };
-		7F709D6A13BCC3C80008DBAD /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
-		7F709D6B13BCC3C80008DBAD /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
+		7F709D6A13BCC3C80008DBAD /* SAMKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAMKeychain.h; sourceTree = "<group>"; };
+		7F709D6B13BCC3C80008DBAD /* SAMKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMKeychain.m; sourceTree = "<group>"; };
 		7F709D6D13BCC4270008DBAD /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		7F709D8A13BD03D30008DBAD /* SalesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SalesViewController.h; sourceTree = "<group>"; };
 		7F709D8B13BD03D30008DBAD /* SalesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SalesViewController.m; sourceTree = "<group>"; };
@@ -1348,8 +1349,8 @@
 		7F1499E313BE55C400D89064 /* Keychain */ = {
 			isa = PBXGroup;
 			children = (
-				7F709D6A13BCC3C80008DBAD /* SSKeychain.h */,
-				7F709D6B13BCC3C80008DBAD /* SSKeychain.m */,
+				7F709D6A13BCC3C80008DBAD /* SAMKeychain.h */,
+				7F709D6B13BCC3C80008DBAD /* SAMKeychain.m */,
 			);
 			name = Keychain;
 			sourceTree = "<group>";
@@ -1399,6 +1400,7 @@
 		7F709D1C13BC98860008DBAD = {
 			isa = PBXGroup;
 			children = (
+				4CD1CF791DF6E44B0018262B /* AppSalesMobile.entitlements */,
 				7F1B159E13C9D1CA00243AA3 /* Classes */,
 				7FAB532913DCF00F0027274F /* Other Sources */,
 				7F709D3413BC98860008DBAD /* Supporting Files */,
@@ -2204,6 +2206,12 @@
 				TargetAttributes = {
 					7F709D2613BC98860008DBAD = {
 						DevelopmentTeam = YAWA3JXQ73;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -2786,7 +2794,7 @@
 				7F709D4113BC98860008DBAD /* AppSales.xcdatamodeld in Sources */,
 				7F709D4713BC98860008DBAD /* AccountsViewController.m in Sources */,
 				7F709D6713BCB6500008DBAD /* FieldEditorViewController.m in Sources */,
-				7F709D6C13BCC3C80008DBAD /* SSKeychain.m in Sources */,
+				7F709D6C13BCC3C80008DBAD /* SAMKeychain.m in Sources */,
 				7F709D8C13BD03D40008DBAD /* SalesViewController.m in Sources */,
 				7F709D8F13BD064E0008DBAD /* ASAccount.m in Sources */,
 				7FFE4BB113BD497A00D9D078 /* RegexKitLite.m in Sources */,
@@ -2904,8 +2912,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = AppSalesMobile.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = YAWA3JXQ73;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OtherSources/AppSales-Prefix.pch";
 				HEADER_SEARCH_PATHS = "";
@@ -2923,8 +2933,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = AppSalesMobile.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = YAWA3JXQ73;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OtherSources/AppSales-Prefix.pch";
 				HEADER_SEARCH_PATHS = "";

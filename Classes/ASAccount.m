@@ -7,7 +7,7 @@
 //
 
 #import "ASAccount.h"
-#import "SSKeychain.h"
+#import "SAMKeychain.h"
 
 #define kAccountKeychainServiceIdentifier	@"iTunesConnect"
 
@@ -18,17 +18,17 @@
 
 - (NSString *)password
 {
-	return [SSKeychain passwordForService:kAccountKeychainServiceIdentifier account:self.username];
+	return [SAMKeychain passwordForService:kAccountKeychainServiceIdentifier account:self.username];
 }
 
 - (void)setPassword:(NSString *)newPassword
 {
-	[SSKeychain setPassword:newPassword forService:kAccountKeychainServiceIdentifier account:self.username];
+	[SAMKeychain setPassword:newPassword forService:kAccountKeychainServiceIdentifier account:self.username];
 }
 
 - (void)deletePassword
 {
-	[SSKeychain deletePasswordForService:kAccountKeychainServiceIdentifier account:self.username];
+	[SAMKeychain deletePasswordForService:kAccountKeychainServiceIdentifier account:self.username];
 }
 
 - (NSString *)displayName
