@@ -261,11 +261,11 @@
 			NSDictionary *salesByProduct = [paidDownloadsByCountryAndProduct objectForKey:[country uppercaseString]];
 			sales = [[[salesByProduct allValues] valueForKeyPath:@"@sum.self"] integerValue];
 		}
-    if (sales > 0) {
-      NSString *subtitle = [NSString stringWithFormat:@"%@: %i %@", [[CountryDictionary sharedDictionary] nameForCountryCode:country], sales, sales == 1 ? @"sale" : @"sales"];
-      ReportDetailEntry *entry = [ReportDetailEntry entryWithRevenue:revenue percentage:percentage subtitle:subtitle country:country product:nil];
-      [sortedEntries addObject:entry];
-    }
+        if (sales > 0) {
+          NSString *subtitle = [NSString stringWithFormat:@"%@: %i %@", [[CountryDictionary sharedDictionary] nameForCountryCode:country], sales, sales == 1 ? @"sale" : @"sales"];
+          ReportDetailEntry *entry = [ReportDetailEntry entryWithRevenue:revenue percentage:percentage subtitle:subtitle country:country product:nil];
+          [sortedEntries addObject:entry];
+        }
 	}
 	self.countryEntries = [NSArray arrayWithArray:sortedEntries];
 	
@@ -285,12 +285,12 @@
 				sales += [[salesByProduct objectForKey:productID] integerValue];
 			}
 		}
-    if (sales > 0) {
-      float percentage = (totalRevenue > 0) ? revenue / totalRevenue : 0.0;
-      NSString *subtitle = [NSString stringWithFormat:@"%i × %@", sales, [product displayName]];
-      ReportDetailEntry *entry = [ReportDetailEntry entryWithRevenue:revenue percentage:percentage subtitle:subtitle country:nil product:product];
-      [entries addObject:entry];
-    }
+        if (sales > 0) {
+          float percentage = (totalRevenue > 0) ? revenue / totalRevenue : 0.0;
+          NSString *subtitle = [NSString stringWithFormat:@"%i × %@", sales, [product displayName]];
+          ReportDetailEntry *entry = [ReportDetailEntry entryWithRevenue:revenue percentage:percentage subtitle:subtitle country:nil product:product];
+          [entries addObject:entry];
+        }
 	}
 	[entries sortUsingDescriptors:[NSArray arrayWithObject:[[[NSSortDescriptor alloc] initWithKey:@"revenue" ascending:NO] autorelease]]];
 	
